@@ -6,14 +6,14 @@
     <title>Virgil.CryptoImpl</title>
     <authors>Virgil Security, Inc</authors>
     <owners>Virgil Security, Inc</owners>
-    <description>Virgil.CryptoAPI provides the required interfaces to Virgil.SDK.</description>
+    <description>Virgil.CryptoImpl provides implementation of Virgil.CryptoAPI using Virgil.Crypto library.</description>
     <releaseNotes>
     </releaseNotes>
     <summary>      
-Virgil Security allows for every developer can build cryptographic features including end-to-end encryption, passwordless authentication, and cryptographic verification of data, devices, and identities into their products, with no cryptographic training. Virgil SDK simplifies their work with Virgil Security services(keys management and identities validation) and Crypto Library(modern algorithms with crypto agility).
+Virgil Security allows for every developer can build cryptographic features including end-to-end encryption, passwordless authentication, and cryptographic verification of data, devices, and identities into their products, with no cryptographic training. 
 
-Docs - https://developer.virgilsecurity.com/docs/cs
-Source - https://github.com/VirgilSecurity/virgil-sdk-net
+Docs - https://developer.virgilsecurity.com/docs/how-to#cryptography
+Source - https://github.com/VirgilSecurity/virgil-sdk-crypto-net
 
 Supported Platforms:
   - .NET Framework 4.5+
@@ -21,9 +21,6 @@ Supported Platforms:
   - Windows 8+
   - Windows Phone 8.1+
   - Windows Phone Silverlight 8+
-  - Xamarin.Android
-  - Xamarin.iOS
-  - Xamarin.iOS (Classic)
     </summary>
     <language>en-US</language>
     <projectUrl>https://virgilsecurity.com/</projectUrl>
@@ -34,6 +31,6 @@ Supported Platforms:
     <dependencies>
     </dependencies>
     <references></references>
-    <tags>PKI, Cryptography, Cross Platform</tags>
+    <tags>virgil, encryption, crypto, cryptography</tags>
   </metadata>
 </package>

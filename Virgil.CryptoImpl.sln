@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgil.CryptoImpl", "Virgil.CryptoImpl.csproj", "{6AB956F8-F217-4214-BA69-30EA5D9958EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgil.CryptoImpl.Tests", "..\Virgil.CryptoImpl.Tests\Virgil.CryptoImpl.Tests.csproj", "{C2584353-9FD2-4B9D-8681-32F22B93C713}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgil.CryptoImpl.Tests", "Virgil.CryptoImpl.Tests\Virgil.CryptoImpl.Tests.csproj", "{C2584353-9FD2-4B9D-8681-32F22B93C713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
