@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System.Linq;
 using System.Text;
+using Virgil.CryptoImpl;
 using Virgil.Crypto;
 
 namespace Virgil.CryptoImpl.Tests

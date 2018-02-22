@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="..\virgil-sdk-crypto-net\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\virgil-sdk-crypto-net\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="..\virgil-sdk-crypto-net\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\virgil-sdk-crypto-net\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.props')" />
   <PropertyGroup>
@@ -46,13 +47,12 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.3.0\lib\net45\Virgil.Crypto.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\virgil-sdk-net\SDK\Source\packages\Virgil.Crypto.2.3.0\lib\net45\Virgil.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Virgil.CryptoApi">
-      <HintPath>..\packages\Virgil.CryptoAPI.1.0.0\lib\portable-net45+win+wpa81+MonoTouch10+xamarinmac20\Virgil.CryptoApi.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\virgil-sdk-net\SDK\Source\packages\Virgil.CryptoAPI.1.0.0\lib\portable-net45+win+wpa81+MonoTouch10+xamarinmac20\Virgil.CryptoApi.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -67,7 +67,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Virgil.CryptoImpl.csproj">
+    <ProjectReference Include="..\Virgil.CryptoImpl\Virgil.CryptoImpl.csproj">
       <Project>{6ab956f8-f217-4214-ba69-30ea5d9958ea}</Project>
       <Name>Virgil.CryptoImpl</Name>
     </ProjectReference>
@@ -76,5 +76,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\virgil-sdk-crypto-net\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\virgil-sdk-crypto-net\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.0\build\net45\Virgil.Crypto.targets" Condition="Exists('..\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.0\build\net45\Virgil.Crypto.targets')" />
-  <Import Project="..\packages\Virgil.Crypto.2.3.0\build\net45\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\net45\Virgil.Crypto.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.9.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
 </Project>
