@@ -98,7 +98,7 @@ The package is available for:
 Installing the package using Package Manager Console:
 
 ```bash
-Run PM> Install-Package Virgil.SDK.Crypto
+Run PM> Install-Package Virgil.CryptoImpl
 ```
 
 ## Docs
