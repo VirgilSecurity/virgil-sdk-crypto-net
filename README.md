@@ -1,6 +1,6 @@
 # Virgil Security .NET/C# Crypto Library
 
-[![Build status](https://ci.appveyor.com/api/projects/status/kqs4lqw426gbpccm/branch/release?svg=true)](https://ci.appveyor.com/project/unlim-it/virgil-sdk-net/branch/release) [![Nuget package](https://img.shields.io/nuget/v/Virgil.Crypto.svg)](https://www.nuget.org/packages/Virgil.Crypto/)
+[![Build status](https://ci.appveyor.com/api/projects/status/kqs4lqw426gbpccm/branch/release?svg=true)](https://ci.appveyor.com/project/unlim-it/virgil-sdk-net/branch/release) [![Nuget package](https://img.shields.io/nuget/v/Virgil.Crypto.svg)](https://www.nuget.org/packages/Virgil.CryptoImpl/)
 [![GitHub license](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](https://github.com/VirgilSecurity/virgil/blob/master/LICENSE)
 
 ### [Introduction](#introduction) | [Library purposes](#library-purposes) | [Usage examples](#usage-examples) | [Installation](#installation) | [Docs](#docs) | [License](#license) | [Contacts](#support)
@@ -90,8 +90,12 @@ Need more examples? Visit our [developer documentation](https://developer.virgil
 
 The Virgil .NET Crypto is provided as a package named Virgil.SDK.Crypto. The package is distributed via NuGet package management system.
 
-The package is available for:
+Supported Platforms:
 - .NET Framework 4.5+
+- ASP.NET Core 1.0+
+- Windows 8+
+- Windows Phone 8.1+
+- Windows Phone Silverlight 8+
 
 Installing the package using Package Manager Console:
 
