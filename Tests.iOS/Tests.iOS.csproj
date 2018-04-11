@@ -28,6 +28,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
     <MtouchVerbosity></MtouchVerbosity>
+<AssemblyName>Tests.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType></DebugType>
@@ -63,6 +64,7 @@
     <MtouchVerbosity></MtouchVerbosity>
     <MtouchExtraArgs>--nolinkaway</MtouchExtraArgs>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+<AssemblyName>Tests.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,8 +120,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
   </ItemGroup>
-  <Import Project="..\Virgil.CryptoImpl.Tests.Shared\Virgil.CryptoImpl.Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.CryptoImpl.Tests.Shared\Virgil.CryptoImpl.Tests.Shared.projitems')" />
-  <Import Project="..\Multi.Shared\Multi.Shared.projitems" Label="Shared" Condition="Exists('..\Multi.Shared\Multi.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets')" />
 </Project>

@@ -34,7 +34,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     /// The <see cref="KeyPair"/> class provides a pair of virgil public and private keys.
