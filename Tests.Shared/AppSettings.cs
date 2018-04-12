@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Virgil.CryptoImpl.Tests
+namespace Virgil.Crypto.Tests
 {
     public class AppSettings
     {

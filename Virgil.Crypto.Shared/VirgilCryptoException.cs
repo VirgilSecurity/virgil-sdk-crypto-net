@@ -35,7 +35,7 @@
 #endregion
 using System;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     /// Represents an errors occurred during interaction with crypto API.

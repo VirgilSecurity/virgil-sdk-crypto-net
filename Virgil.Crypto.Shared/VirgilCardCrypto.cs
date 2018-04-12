@@ -38,7 +38,7 @@
 
 using Virgil.CryptoAPI;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     /// The <see cref="VirgilCardCrypto"/> class provides a cryptographic operations in applications, such as hashing, 

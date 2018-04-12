@@ -36,7 +36,7 @@
 
 using Virgil.CryptoAPI;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     /// The <see cref="PrivateKey"/> implements <see cref="IPrivateKey"/> interface and

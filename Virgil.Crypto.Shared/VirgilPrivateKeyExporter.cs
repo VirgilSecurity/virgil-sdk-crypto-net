@@ -35,7 +35,7 @@
 #endregion
 using Virgil.CryptoAPI;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     ///  The <see cref="VirgilPrivateKeyExporter"/> class implements interface <see cref="IPrivateKeyExporter"/>

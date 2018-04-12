@@ -38,7 +38,7 @@ using Virgil.CryptoAPI;
 using System;
 using Virgil.Crypto;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
 
     internal static class VirgilCryptoExtentions

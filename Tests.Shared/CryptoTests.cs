@@ -2,10 +2,9 @@
 using NUnit.Framework;
 using System.Linq;
 using System.Text;
-using Virgil.CryptoImpl;
 using Virgil.Crypto;
 
-namespace Virgil.CryptoImpl.Tests
+namespace Virgil.Crypto.Tests
 {
     public class CryptoTests
     {

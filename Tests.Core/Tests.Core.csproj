@@ -8,6 +8,4 @@
     <PackageReference Include="NUnit" Version="3.10.1" />
     <PackageReference Include="Virgil.Crypto" Version="2.3.0" />
   </ItemGroup>
-  <Import Project="..\Multi.Shared\Multi.Shared.projitems" Label="Shared" Condition="Exists('..\Multi.Shared\Multi.Shared.projitems')" />
-  <Import Project="..\Virgil.CryptoImpl.Tests.Shared\Virgil.CryptoImpl.Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.CryptoImpl.Tests.Shared\Virgil.CryptoImpl.Tests.Shared.projitems')" />
 </Project>

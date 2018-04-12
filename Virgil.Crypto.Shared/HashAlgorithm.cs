@@ -34,7 +34,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     public enum HashAlgorithm
     {

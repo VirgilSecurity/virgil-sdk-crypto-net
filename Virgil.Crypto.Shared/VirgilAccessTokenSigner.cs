@@ -37,7 +37,7 @@
 #endregion
 using Virgil.CryptoAPI;
 
-namespace Virgil.CryptoImpl
+namespace Virgil.Crypto
 {
     /// <summary>
     /// The <see cref="VirgilAccessTokenSigner"/> implements <see cref="IAccessTokenSigner"/> interface and
