@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Tests3.iOS</string>
+	<string>Tests.iOS</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.virgil.virgil-provision</string>
 	<key>CFBundleShortVersionString</key>
