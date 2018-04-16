@@ -12,6 +12,6 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
-  <Import Project="..\Virgil.Crypto.Shared\Multi.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Multi.Shared.projitems')" />
+  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
 </Project>

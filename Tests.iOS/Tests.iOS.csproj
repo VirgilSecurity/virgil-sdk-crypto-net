@@ -121,8 +121,8 @@
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="HashTest.cs" />
   </ItemGroup>
+  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
-  <Import Project="..\Virgil.Crypto.Shared\Multi.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Multi.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets')" />
 </Project>
