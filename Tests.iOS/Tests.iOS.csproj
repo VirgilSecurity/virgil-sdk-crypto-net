@@ -58,7 +58,7 @@
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
@@ -105,7 +105,7 @@
       <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\netstandard1.3\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.3.0\lib\xamarinios\Virgil.Crypto.dll</HintPath>
+      <HintPath>..\packages\Virgil.Crypto.2.4.0\lib\xamarinios\Virgil.Crypto.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,8 +121,6 @@
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="HashTest.cs" />
   </ItemGroup>
-  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
-  <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\xamarinios\Virgil.Crypto.targets')" />
+  <Import Project="..\packages\Virgil.Crypto.2.4.0\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.0\build\xamarinios\Virgil.Crypto.targets')" />
 </Project>

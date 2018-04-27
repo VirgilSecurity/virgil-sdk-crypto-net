@@ -713,9 +713,10 @@ namespace Virgil.Crypto
                     byte[] hash = sha.Hash(payload);
                     return hash;
                 }
-            }
+            } 
             catch (Exception ex)
             {
+                // todo remove after tests
                 Debug.WriteLine(ex.ToString());
                 throw new VirgilCryptoException(ex.Message);
             }

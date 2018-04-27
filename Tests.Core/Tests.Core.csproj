@@ -6,12 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.10.1" />
-    <PackageReference Include="Virgil.Crypto" Version="2.3.0" />
-    <PackageReference Include="Virgil.CryptoAPI" Version="1.0.0" />
+    <PackageReference Include="Virgil.Crypto" Version="2.4.0-rc1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
-  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
 </Project>

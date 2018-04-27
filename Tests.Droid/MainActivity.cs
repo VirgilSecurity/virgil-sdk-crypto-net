@@ -11,6 +11,9 @@ namespace Tests.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            var r = new Virgil.Crypto.Pfs.VirgilPFS();
+            var p = new Virgil.Crypto.Pythia.VirgilPythia();
+
             // tests can be inside the main assembly
             AddTest(Assembly.GetExecutingAssembly());
             // or in any reference assemblies

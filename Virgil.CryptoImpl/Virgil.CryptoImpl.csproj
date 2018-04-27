@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Virgil.CryptoImpl</PackageId>
+    <PackageVersion>2.4.0.0</PackageVersion>
+    <Authors>Virgil.CryptoImpl</Authors>
+    <Description>Virgil.CryptoImpl</Description>
+    <Owners>Virgil</Owners>
+    <Summary>4</Summary>
+    <Title>4</Title>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <ReleaseVersion>2.4.0.0</ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <RootNamespace>Virgil.Crypto</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Virgil.CryptoAPI" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Virgil.Crypto">
+      <HintPath>..\..\dump\Archive\package\lib\netcore\Virgil.Crypto.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
+</Project>

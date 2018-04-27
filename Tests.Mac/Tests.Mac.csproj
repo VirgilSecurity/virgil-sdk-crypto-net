@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
-  <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
-  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -61,17 +58,12 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="System.Net" />
-    <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.3.0\lib\xamarinmac\Virgil.Crypto.dll</HintPath>
-    </Reference>
     <Reference Include="Virgil.CryptoApi">
       <HintPath>..\packages\Virgil.CryptoAPI.1.0.0\lib\portable-net45+win+wpa81+MonoTouch10+xamarinmac20\Virgil.CryptoApi.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.10.1\lib\netstandard2.0\nunit.framework.dll</HintPath>
+    <Reference Include="Virgil.Crypto">
+      <HintPath>..\packages\Virgil.Crypto.2.4.0\lib\xamarinmac\Virgil.Crypto.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +78,5 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
-  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\packages\Virgil.Crypto.2.3.0\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\xamarinmac\Virgil.Crypto.targets')" />
+  <Import Project="..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets')" />
 </Project>

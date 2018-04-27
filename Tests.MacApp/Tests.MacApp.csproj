@@ -28,8 +28,9 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler></HttpClientHandler>
-    <LinkMode></LinkMode>
+    <LinkMode>SdkOnly</LinkMode>
     <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,19 +45,20 @@
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
-    <LinkMode>SdkOnly</LinkMode>
+    <LinkMode>Full</LinkMode>
     <HttpClientHandler></HttpClientHandler>
     <XamMacArch></XamMacArch>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
-    <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.3.0\lib\xamarinmac\Virgil.Crypto.dll</HintPath>
-    </Reference>
     <Reference Include="Virgil.CryptoApi">
       <HintPath>..\packages\Virgil.CryptoAPI.1.0.0\lib\portable-net45+win+wpa81+MonoTouch10+xamarinmac20\Virgil.CryptoApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Virgil.Crypto">
+      <HintPath>..\packages\Virgil.Crypto.2.4.0\lib\xamarinmac\Virgil.Crypto.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +94,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
-  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
-  <Import Project="..\packages\Virgil.Crypto.2.3.0\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.3.0\build\xamarinmac\Virgil.Crypto.targets')" />
+  <Import Project="\Users\vasilina\projects\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.1-rc2\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('\Users\vasilina\projects\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.1-rc2\build\xamarinmac\Virgil.Crypto.targets')" />
+  <Import Project="..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets')" />
 </Project>

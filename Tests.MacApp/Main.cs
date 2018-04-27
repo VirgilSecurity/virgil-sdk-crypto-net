@@ -10,8 +10,10 @@ namespace Tests.MacApp
         {
             var crypto = new VirgilCrypto();
             var hash = crypto.GenerateHash(Encoding.UTF8.GetBytes("hi"));
+            var p = new Virgil.Crypto.pythia.VirgilPythia();
 
-            System.Console.WriteLine("VirgilVersion=" + VirgilVersion.AsString());
+
+           System.Console.WriteLine("VirgilVersion=" + VirgilVersion.AsString());
 
             NSApplication.Init();
             NSApplication.Main(args);

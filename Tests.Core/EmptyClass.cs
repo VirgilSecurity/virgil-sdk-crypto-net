@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Text;
 using Virgil.Crypto;
 
-namespace Tests.CoreApp
+namespace Tests.Core
 {
-    class Program
+    public class EmptyClass
     {
-        static void Main(string[] args)
+        public EmptyClass()
         {
             System.Console.WriteLine("VirgilVersion=" + VirgilVersion.AsString());
             var s = new Virgil.Crypto.Pfs.VirgilPFS();
             var v = new Virgil.Crypto.VirgilCrypto();
             var p = new Virgil.Crypto.Pythia.VirgilPythia();
-            //var crypto = new VirgilCrypto();
-            //var hash = crypto.GenerateHash(Encoding.UTF8.GetBytes("hi"));
         }
     }
 }
- 

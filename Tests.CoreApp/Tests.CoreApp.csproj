@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Virgil.Crypto" Version="2.3.0" />
-    <PackageReference Include="Virgil.CryptoAPI" Version="1.0.0" />
+    <PackageReference Include="Virgil.Crypto" Version="2.4.0-beta3" />
   </ItemGroup>
-  <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />
 </Project>
