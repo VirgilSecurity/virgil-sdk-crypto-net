@@ -12,6 +12,7 @@ namespace Tests.iOS
         static void Main(string[] args)
         {
             System.Console.WriteLine("VirgilVersion=" + VirgilVersion.AsString());
+
             // if you want to use a different Application Delegate class from "UnitTestAppDelegate"
             // you can specify it here.
             UIApplication.Main(args, null, "UnitTestAppDelegate");
