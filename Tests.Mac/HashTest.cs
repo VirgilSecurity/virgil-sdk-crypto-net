@@ -11,7 +11,7 @@ namespace Tests.iOS
         public void DoHashTest()
         {
             try{
-                var p = new Virgil.Crypto.pythia.VirgilPythia();
+                var pythia = new Virgil.Crypto.Pythia.VirgilPythia();
                 var crypto = new VirgilCrypto();
                 var hash = crypto.GenerateHash(Encoding.UTF8.GetBytes("hi"));
             }

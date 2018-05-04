@@ -105,10 +105,10 @@
       <HintPath>..\packages\Virgil.CryptoAPI.1.0.1\lib\netstandard1.1\VirgilCryptoAPI.dll</HintPath>
     </Reference>
     <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.4.0-rc1\lib\xamarinios\Virgil.Crypto.dll</HintPath>
+      <HintPath>..\packages\Virgil.Crypto.2.4.2\lib\xamarinios\Virgil.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Virgil.CryptoImpl">
-      <HintPath>..\packages\Virgil.Crypto.2.4.0-rc1\lib\xamarinios\Virgil.CryptoImpl.dll</HintPath>
+      <HintPath>..\packages\Virgil.Crypto.2.4.2\lib\xamarinios\Virgil.CryptoImpl.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +124,7 @@
     <Compile Include="UnitTestAppDelegate.cs" />
     <Compile Include="HashTest.cs" />
   </ItemGroup>
+  <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\packages\Virgil.Crypto.2.4.0-rc1\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.0-rc1\build\xamarinios\Virgil.Crypto.targets')" />
+  <Import Project="..\packages\Virgil.Crypto.2.4.2\build\xamarinios\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.2\build\xamarinios\Virgil.Crypto.targets')" />
 </Project>

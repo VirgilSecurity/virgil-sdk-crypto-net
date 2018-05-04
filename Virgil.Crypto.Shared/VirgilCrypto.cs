@@ -716,8 +716,6 @@ namespace Virgil.Crypto
             } 
             catch (Exception ex)
             {
-                // todo remove after tests
-                Debug.WriteLine(ex.ToString());
                 throw new VirgilCryptoException(ex.Message);
             }
         }
