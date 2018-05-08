@@ -57,9 +57,6 @@
     <Reference Include="Virgil.CryptoApi">
       <HintPath>..\packages\Virgil.CryptoAPI.1.0.0\lib\portable-net45+win+wpa81+MonoTouch10+xamarinmac20\Virgil.CryptoApi.dll</HintPath>
     </Reference>
-    <Reference Include="Virgil.Crypto">
-      <HintPath>..\packages\Virgil.Crypto.2.4.0\lib\xamarinmac\Virgil.Crypto.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -96,5 +93,4 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="\Users\vasilina\projects\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.1-rc2\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('\Users\vasilina\projects\virgil-sdk-crypto-net\packages\Virgil.Crypto.2.3.1-rc2\build\xamarinmac\Virgil.Crypto.targets')" />
-  <Import Project="..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets" Condition="Exists('..\packages\Virgil.Crypto.2.4.0\build\xamarinmac\Virgil.Crypto.targets')" />
 </Project>
