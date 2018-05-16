@@ -1,6 +1,6 @@
 # Virgil Security .NET/C# Crypto Library
 
-[![Build status](https://ci.appveyor.com/api/projects/status/kqs4lqw426gbpccm/branch/release?svg=true)](https://ci.appveyor.com/project/unlim-it/virgil-sdk-net/branch/release) [![Nuget package](https://img.shields.io/nuget/v/Virgil.CryptoImpl.svg)](https://www.nuget.org/packages/Virgil.CryptoImpl/)
+[![Build status](https://ci.appveyor.com/api/projects/status/kqs4lqw426gbpccm/branch/release?svg=true)](https://ci.appveyor.com/project/unlim-it/virgil-sdk-net/branch/release) [![Nuget package](https://img.shields.io/nuget/v/Virgil.Crypto.svg)](https://www.nuget.org/packages/Virgil.Crypto/)
 [![GitHub license](https://img.shields.io/badge/license-BSD%203--Clause-blue.svg)](https://github.com/VirgilSecurity/virgil/blob/master/LICENSE)
 
 ### [Introduction](#introduction) | [Library purposes](#library-purposes) | [Usage examples](#usage-examples) | [Installation](#installation) | [Docs](#docs) | [License](#license) | [Contacts](#support)
@@ -22,7 +22,7 @@ Virgil Security, Inc., guides software developers into the forthcoming security 
 
 Generate a Private Key with the default algorithm (EC_X25519):
 ```cs
-using Virgil.CryptoImpl;
+using Virgil.Crypto;
 
 var crypto = new VirgilCrypto();
 var keyPair = crypto.GenerateKeys();
@@ -32,7 +32,7 @@ var keyPair = crypto.GenerateKeys();
 
 Generate signature and sign data with a private key:
 ```cs
-using Virgil.CryptoImpl;
+using Virgil.Crypto;
 
 var crypto = new VirgilCrypto();
 
@@ -46,7 +46,7 @@ var signature = crypto.GenerateSignature(dataToSign, senderPrivateKey);
 
 Verify a signature with a public key:
 ```cs
-using Virgil.CryptoImpl;
+using Virgil.Crypto;
 
 var crypto = new VirgilCrypto();
 
@@ -59,7 +59,7 @@ var verified = crypto.VerifySignature(signature, dataToSign, senderPublicKey);
 Encrypt Data on a Public Key:
 
 ```cs
-using Virgil.CryptoImpl;
+using Virgil.Crypto;
 
 var crypto = new VirgilCrypto();
 
@@ -73,7 +73,7 @@ var encryptedData = crypto.Encrypt(dataToEncrypt, receiverPublicKey);
 
 Decrypt the encrypted data with a Private Key:
 ```cs
-using Virgil.CryptoImpl;
+using Virgil.Crypto;
 
 var crypto = new VirgilCrypto();
 
@@ -100,7 +100,7 @@ Supported Platforms:
 Installing the package using Package Manager Console:
 
 ```bash
-Run PM> Install-Package Virgil.CryptoImpl
+Run PM> Install-Package Virgil.Crypto
 ```
 
 ## Docs
