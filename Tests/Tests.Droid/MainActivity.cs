@@ -2,6 +2,7 @@
 using System.Text;
 using Android.App;
 using Android.OS;
+using Virgil.Crypto;
 using Xamarin.Android.NUnitLite;
 
 namespace Tests.Droid
@@ -11,8 +12,7 @@ namespace Tests.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            var r = new Virgil.Crypto.Pfs.VirgilPFS();
-            var p = new Virgil.Crypto.Pythia.VirgilPythia();
+            System.Console.WriteLine("VirgilVersion=" + VirgilVersion.AsString());
 
             // tests can be inside the main assembly
             AddTest(Assembly.GetExecutingAssembly());

@@ -122,7 +122,12 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="UnitTestAppDelegate.cs" />
-    <Compile Include="HashTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Virgil.CryptoImpl\Virgil.CryptoImpl.csproj">
+      <Project>{5695CFF6-0F2C-488D-9777-7230F2D0D286}</Project>
+      <Name>Virgil.CryptoImpl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
