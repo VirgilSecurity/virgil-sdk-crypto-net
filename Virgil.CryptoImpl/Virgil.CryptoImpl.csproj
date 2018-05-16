@@ -29,10 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Virgil.Crypto">
-      <HintPath>..\..\dump\Archive\package\lib\netcore\Virgil.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Virgil.Crypto">
-      <HintPath>..\..\dump\Archive\package\lib\netstandard1.1\Virgil.Crypto.dll</HintPath>
+      <HintPath>..\Nuget\core\Virgil.Crypto.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems" Label="Shared" Condition="Exists('..\Virgil.Crypto.Shared\Virgil.Crypto.Shared.projitems')" />

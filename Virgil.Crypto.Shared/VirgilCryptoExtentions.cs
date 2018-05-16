@@ -34,12 +34,11 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-using Virgil.CryptoAPI;
-using System;
-using Virgil.Crypto;
-
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
+    using System;
+    using Virgil.Crypto;
 
     internal static class VirgilCryptoExtentions
     {

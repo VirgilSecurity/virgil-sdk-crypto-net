@@ -37,17 +37,17 @@
 
 #endregion
 
-using System.Linq;
-using Virgil.Crypto.Foundation;
-using System;
-using System.IO;
-using System.Text;
-using Virgil.Crypto;
-using Virgil.CryptoAPI;
-using System.Diagnostics;
-
 namespace Virgil.Crypto
 {
+    using System.Linq;
+    using Virgil.Crypto.Foundation;
+    using System;
+    using System.IO;
+    using System.Text;
+    using Virgil.Crypto;
+    using Virgil.CryptoAPI;
+    using System.Diagnostics;
+
     /// <summary>
     /// The <see cref="VirgilCardCrypto"/> class provides a cryptographic operations in applications, such as hashing, 
     /// signature generation and verification, and encryption and decryption.

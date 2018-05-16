@@ -33,10 +33,11 @@
 // IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
-using Virgil.CryptoAPI;
 
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
+
     /// <summary>
     ///  The <see cref="VirgilPrivateKeyExporter"/> class implements interface <see cref="IPrivateKeyExporter"/>
     /// to export <see cref="IPrivateKey"/> into its material representation bytes and 

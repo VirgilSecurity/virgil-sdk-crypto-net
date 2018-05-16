@@ -34,10 +34,10 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-using Virgil.CryptoAPI;
-
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
+
     /// <summary>
     /// The <see cref="PublicKey"/> implements <see cref="IPublicKey"/> interface and
     /// represents an opaque reference to keying material that is managed by the agent.

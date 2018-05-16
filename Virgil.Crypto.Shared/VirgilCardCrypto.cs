@@ -36,10 +36,11 @@
 
 #endregion
 
-using Virgil.CryptoAPI;
 
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
+
     /// <summary>
     /// The <see cref="VirgilCardCrypto"/> class provides a cryptographic operations in applications, such as hashing, 
     /// signature generation and verification, and encryption and decryption.

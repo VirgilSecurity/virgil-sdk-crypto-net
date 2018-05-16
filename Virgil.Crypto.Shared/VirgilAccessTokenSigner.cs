@@ -35,10 +35,11 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #endregion
-using Virgil.CryptoAPI;
 
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
+
     /// <summary>
     /// The <see cref="VirgilAccessTokenSigner"/> implements <see cref="IAccessTokenSigner"/> interface and
     ///provides a cryptographic operations in applications, such as signature generation and verification in an access token.

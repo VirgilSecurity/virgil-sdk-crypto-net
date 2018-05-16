@@ -45,12 +45,14 @@
       <group targetFramework="xamarinios">
         <dependency id="Virgil.CryptoAPI" version="1.0.1" />
       </group>
+      <group targetFramework="xamarinmac">
+        <dependency id="Virgil.CryptoAPI" version="1.0.1" />
+      </group>
     </dependencies>
     <references>
       <reference file="Virgil.Crypto.dll" />
       <reference file="Virgil.CryptoImpl.dll" />
     </references>
     <tags>Cryptography, Elliptic Curve, Cross Platform</tags>
-
   </metadata>
 </package>
