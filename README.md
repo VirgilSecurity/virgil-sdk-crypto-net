@@ -90,12 +90,16 @@ Need more examples? Visit our [developer documentation](https://developer.virgil
 
 The Virgil .NET Crypto is provided as a package named Virgil.SDK.Crypto. The package is distributed via NuGet package management system.
 
-Supported Platforms:
-- .NET Framework 4.5+
-- ASP.NET Core 1.0+
-- Windows 8+
-- Windows Phone 8.1+
-- Windows Phone Silverlight 8+
+  Supported Platforms:
+   - .NET Standard 1.1+
+   - .NET Framework 4.5+
+   - .NET Core 1.0+
+   - Universal Windows Platform 10
+   - Windows 8.0+
+   - Windows Phone 8.1+
+   - Xamarin.Android 7.0+
+   - Xamarin.iOS 10.0+
+   - Mono 4.6+ for x86-64(AMD64)
 
 Installing the package using Package Manager Console:
 
