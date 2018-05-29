@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{0D879416-CB61-4913-9336-EBB76958F599}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Virgil.Crypto.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)HashAlgorithm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyPair.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyPairType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PrivateKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PublicKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilAccessTokenSigner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilCardCrypto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilCrypto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilCryptoException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilCryptoExtentions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirgilPrivateKeyExporter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)packages.config" />
+  </ItemGroup>
+</Project>
