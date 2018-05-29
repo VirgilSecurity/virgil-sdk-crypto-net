@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Virgil.Crypto</id>
+    <version>2.4.4</version>
+    <title>Virgil.Crypto</title>
+    <authors>Virgil Security, Inc</authors>
+    <owners>Virgil Security, Inc</owners>
+    <description>
+      Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure to enable seamless, end-to-end encryption for any application, platform or device. See below for currently available languages and platforms. Get in touch with us to get preview access to our key infrastructure.
+
+      https://developer.virgilsecurity.com/
+
+      Virgil Security, Inc., guides software developers into the forthcoming security world in which everything will be encrypted (and passwords will be eliminated). In this world, the days of developers having to raise millions of dollars to build a secure chat, secure email, secure file-sharing, or a secure anything have come to an end. Now developers can instead focus on building features that give them a competitive market advantage while end-users can enjoy the privacy and security they increasingly demand.
+
+      Supported Platforms:
+       - .NET Standard 1.1+
+       - .NET Framework 4.5+
+       - .NET Core 1.0+
+       - Universal Windows Platform 10
+       - Windows 8.0+
+       - Windows Phone 8.1+
+       - Xamarin.Android 7.0+
+       - Xamarin.iOS 10.0+
+       - Mono 4.6+ for x86-64(AMD64)
+       
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      This cross-platform library contains code to encrypt, decrypt, sign and verify any data.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://virgilsecurity.com/</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/9740508</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <copyright>© 2018 Virgil Security, Inc.</copyright>
+    <dependencies>
+      <group targetFramework="netstandard1.1">
+        <dependency id="Microsoft.NETCore.Portable.Compatibility" version="1.0.1" />
+        <dependency id="Virgil.CryptoAPI" version="1.0.1" />
+      </group>
+      <group targetFramework="monoandroid">
+        <dependency id="Virgil.CryptoAPI" version="1.0.1" />
+      </group>
+      <group targetFramework="xamarinios">
+        <dependency id="Virgil.CryptoAPI" version="1.0.1" />
+      </group>
+      <group targetFramework="xamarinmac">
+        <dependency id="Virgil.CryptoAPI" version="1.0.1" />
+      </group>
+    </dependencies>
+    <references>
+      <reference file="Virgil.Crypto.dll" />
+      <reference file="Virgil.CryptoImpl.dll" />
+    </references>
+    <tags>Cryptography, Elliptic Curve, Cross Platform</tags>
+  </metadata>
+</package>
