@@ -34,10 +34,8 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-
 namespace Virgil.CryptoAPI
 {
-
     /// <summary>
     ///  The <see cref="IPrivateKeyExporter"/> provides interface 
     /// to export <see cref="IPrivateKey"/> into its material representation bytes and 
