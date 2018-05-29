@@ -128,8 +128,6 @@ namespace Virgil.Crypto
         /// Generates recommended asymmetric key pair that is comprised of both 
         /// Public and Private keys.
         /// </summary>
-        /// <param name="keyMaterial">the only data to be used for key generation, 
-        /// length must be more than 31.</param>
         /// <returns>Generated key pair.</returns>
         /// <example>
         /// Generated key pair with the default type FAST_EC_ED25519.
@@ -138,17 +136,9 @@ namespace Virgil.Crypto
         ///         var keyPair = crypto.GenerateKeys();
         ///     </code>
         /// </example>
-        public KeyPair GenerateKeys(byte[] keyMaterial = null)
+        public KeyPair GenerateKeys()
         {
-            if (keyMaterial == null || keyMaterial.Length == 0)
-            {
-                return this.GenerateKeys(this.defaultKeyPairType);
-            }
-            else
-            {
-                return this.GenerateKeys(this.defaultKeyPairType, keyMaterial);
-            }
-
+            return this.GenerateKeys(this.defaultKeyPairType);
         }
 
         /// <summary>
