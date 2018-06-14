@@ -261,5 +261,7 @@ __pycache__/
 *.pyc
 
 # Nuget output
-Nuget/output
-Nuget/package
+Nuget/viril-crypto/output
+Nuget/virgil-crypto/package
+Nuget/virgil-api/package
+Nuget/viril-api/output

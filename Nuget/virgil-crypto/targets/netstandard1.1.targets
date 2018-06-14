@@ -2,7 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Reference Include="$(MSBuildThisFileDirectory)..\..\runtimes\win\lib\Virgil.Crypto.dll" Condition=" '$(OS)' == 'Windows_NT' "/>
-    <Reference Include="$(MSBuildThisFileDirectory)..\..\runtimes\osx\lib\Virgil.Crypto.dll" Condition=" '$(OS)' != 'Windows_NT' "/>
+    <Reference Include="$(MSBuildThisFileDirectory)..\..\runtimes\osx\lib\Virgil.Crypto.dll" Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' "/>
+    <Reference Include="$(MSBuildThisFileDirectory)..\..\runtimes\linux\lib\Virgil.Crypto.dll" Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' "/>
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)..\..\runtimes\win\native\x86\virgil_crypto_net.dll" Condition=" '$(OS)' == 'Windows_NT' ">

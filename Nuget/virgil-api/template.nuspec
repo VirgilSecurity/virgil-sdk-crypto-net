@@ -16,14 +16,16 @@ Docs - https://developer.virgilsecurity.com/docs/cs
 Source - https://github.com/VirgilSecurity/virgil-sdk-net
 
 Supported Platforms:
-  - .NET Framework 4.5+
-  - ASP.NET Core 1.0+
-  - Windows 8+
-  - Windows Phone 8.1+
-  - Windows Phone Silverlight 8+
-  - Xamarin.Android
-  - Xamarin.iOS
-  - Xamarin.iOS (Classic)
+     - .NET Standard 1.1+
+     - .NET Framework 4.5+
+     - .NET Core 1.0+
+     - Universal Windows Platform 10
+     - Windows 8.0+
+     - Windows Phone 8.1+
+     - Xamarin.Android 7.0+
+     - Xamarin.iOS 10.0+
+     - Xamarin.Mac 3.0+
+     - Mono 4.6+ 
     </summary>
     <language>en-US</language>
     <projectUrl>https://virgilsecurity.com/</projectUrl>
@@ -38,5 +40,6 @@ Supported Platforms:
   </metadata>
   <files>
     <file src="../../../Virgil.CryptoAPI/bin/Release/Virgil.CryptoAPI.dll" target="lib/netstandard1.1" />
+
 </files>
 </package>

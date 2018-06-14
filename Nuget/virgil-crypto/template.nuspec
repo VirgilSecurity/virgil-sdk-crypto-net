@@ -22,7 +22,8 @@
        - Windows Phone 8.1+
        - Xamarin.Android 7.0+
        - Xamarin.iOS 10.0+
-       - Mono 4.6+ for x86-64(AMD64)
+       - Xamarin.Mac 3.0+
+       - Mono 4.6+ for x86-64(AMD64 OSX)
        
     </description>
     <releaseNotes>

@@ -49,8 +49,8 @@ namespace Virgil.Crypto
     using System.Diagnostics;
 
     /// <summary>
-    /// The <see cref="VirgilCardCrypto"/> class provides a cryptographic operations in applications, such as hashing, 
-    /// signature generation and verification, and encryption and decryption.
+    /// The <see cref="VirgilCrypto"/> class provides a cryptographic operations in applications, such as hashing, 
+    /// signature generation and verification, key creation, import and export key, encryption and decryption.
     /// </summary>
     public sealed class VirgilCrypto
     {
