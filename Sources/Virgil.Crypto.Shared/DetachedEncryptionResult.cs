@@ -1,4 +1,4 @@
-#region Copyright (C) Virgil Security Inc.
+﻿#region Copyright (C) Virgil Security Inc.
 // Copyright (C) 2015-2018 Virgil Security Inc.
 // 
 // Lead Maintainer: Virgil Security Inc. <support@virgilsecurity.com>
@@ -34,13 +34,11 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Virgil.CryptoAPI
+namespace Virgil.Crypto
 {
-    /// <summary>
-    /// The <see cref="IPrivateKey"/> object represents an opaque reference to 
-    /// keying material that is managed by the agent.
-    /// </summary>
-    public interface IPrivateKey
+    public class DetachedEncryptionResult
     {
+        public byte[] Meta { get; set; }
+        public byte[] Value { get; set; }
     }
 }

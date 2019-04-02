@@ -34,6 +34,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
+
 namespace Virgil.Crypto
 {
     using Virgil.CryptoAPI;

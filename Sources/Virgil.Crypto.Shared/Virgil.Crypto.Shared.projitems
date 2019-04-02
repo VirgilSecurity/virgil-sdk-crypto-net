@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)VirgilCryptoException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VirgilCryptoExtentions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VirgilPrivateKeyExporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DetachedEncryptionResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)packages.config" />
