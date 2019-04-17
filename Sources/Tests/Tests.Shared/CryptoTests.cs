@@ -32,7 +32,7 @@ namespace Virgil.Crypto.Tests
         {
             var crypto = new VirgilCrypto();
                 var keyMateria = Encoding.UTF8.GetBytes("26dfhvnslvdsfkdfvnndsb234q2xrFOuY5EDSAFGCCXHCJSHJAD");
-            var keyPair = crypto.GenerateKeys(keyMateria);
+            var keyPair = crypto.GenerateKeys();
             var messageBytes = Encoding.UTF8.GetBytes("hi");
             var encryptedData = crypto.Encrypt(messageBytes, keyPair.PublicKey);
             Assert.AreEqual(messageBytes, crypto.Decrypt(encryptedData, keyPair.PrivateKey));
@@ -65,6 +65,20 @@ namespace Virgil.Crypto.Tests
         }
 
 
+        [Test]
+        public void DecryptThenVerifyDetached_Should_ReturnOriginData()
+        {
+            var crypto = new VirgilCrypto();
+            var keyPair = crypto.GenerateKeys();
+            var snapshot = Encoding.UTF8.GetBytes("some card snapshot");
+            var keyPair2 = crypto.GenerateKeys();
+            var encrypted = crypto.SignThenEncryptDetached(snapshot, keyPair.PrivateKey, new PublicKey[] { keyPair2.PublicKey });
+            var decrypted = crypto.DecryptThenVerifyDetached(encrypted.Value, encrypted.Meta, keyPair2.PrivateKey, new PublicKey[] { keyPair.PublicKey });
+            Assert.AreEqual(snapshot, decrypted);
+        }
+
+
+
         private  byte[] CombineBytesArrays(params byte[][] arrays)
         {
             var rv = new byte[arrays.Sum(a => a.Length)];
@@ -76,8 +90,5 @@ namespace Virgil.Crypto.Tests
             }
             return rv;
         }
-
     }
-
-
 }
