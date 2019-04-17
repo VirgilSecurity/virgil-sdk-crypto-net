@@ -664,8 +664,8 @@ namespace Virgil.Crypto
                    
                     return new DetachedEncryptionResult()
                     {
-                        Meta = cipher.GetContentInfo(),
-                        Value = cipher.Encrypt(data, false)
+                        Value = cipher.Encrypt(data, false),
+                        Meta = cipher.GetContentInfo()
                     };
                 }
             }
@@ -905,6 +905,7 @@ namespace Virgil.Crypto
 
         private IPublicKey FindPublicKeyBySignerId(IPublicKey[] publicKeys, byte[] signerId)
         {
+
             foreach (IPublicKey publicKey in publicKeys)
             {
                 if (ByteSequencesEqual(VirgilCryptoExtentions.Get(publicKey).Id, signerId))
@@ -912,7 +913,7 @@ namespace Virgil.Crypto
                     return publicKey;
                 }
             }
-            return null;
+            throw new VirgilCryptoException("Signer isn't in the list of trusted public keys.");
         }
 
         private bool ByteSequencesEqual(byte[] sequence1, byte[] sequence2)
