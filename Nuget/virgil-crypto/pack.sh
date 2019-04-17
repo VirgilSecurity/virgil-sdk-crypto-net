@@ -17,8 +17,8 @@ liba1=( "$cdn_base_url-$version-mono-android-21.tgz"         'android' 'monoandr
 liba2=( "$cdn_base_url-$version-mono-ios-9.0.tgz"            'ios'     'xamarinios'                )
 liba3=( "$cdn_base_url-$version-mono-linux-x86_64.tgz"       'linux'   $mono_framework                          )
 liba4=( "$cdn_base_url-$version-net-windows-6.3.zip"         $win_platform     $net_framework              )
-liba5=( "$cdn_base_url-$version-mono-darwin-17.5-x86_64.tgz" $osx_platform     $netstandard_framework        )
-liba6=( "$cdn_base_url-$version-mono-darwin-17.5-x86_64.tgz" $osx_platform     'xamarinmac20'        )
+liba5=( "$cdn_base_url-$version-mono-darwin-18.0-x86_64.tgz" $osx_platform     $netstandard_framework        )
+liba6=( "$cdn_base_url-$version-mono-darwin-18.0-x86_64.tgz" $osx_platform     'xamarinmac20'        )
 # create or clear a working and package dirs
 
 rm -rf $working_dir && mkdir $working_dir && mkdir $crypto_core_dir
