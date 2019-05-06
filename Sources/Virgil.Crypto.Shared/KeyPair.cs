@@ -36,8 +36,6 @@
 
 namespace Virgil.Crypto
 {
-    using Virgil.CryptoAPI;
-
     /// <summary>
     /// The <see cref="KeyPair"/> class provides a pair of virgil public and private keys.
     /// </summary>

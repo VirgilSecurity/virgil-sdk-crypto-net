@@ -39,14 +39,14 @@
 
 namespace Virgil.Crypto
 {
+    using Virgil.CryptoAPI;
     using System.Linq;
-    using Virgil.Crypto.Foundation;
     using System;
     using System.IO;
     using System.Text;
     using Virgil.Crypto;
-    using Virgil.CryptoAPI;
     using System.Diagnostics;
+    using Virgil.Crypto.Foundation;
 
     /// <summary>
     /// The <see cref="VirgilCrypto"/> class provides a cryptographic operations in applications, such as hashing, 
@@ -623,6 +623,118 @@ namespace Virgil.Crypto
         }
 
         /// <summary>
+        /// Signs and encrypts the specified data.
+        /// </summary>
+        /// <param name="data">The data to encrypt.</param>
+        /// <param name="privateKey">The Private key to sign the data.</param>
+        /// <param name="recipients">The list of Public key recipients to encrypt the data.</param>
+        /// <returns>Signed and encrypted data bytes.</returns>
+        /// <exception cref="Virgil.Crypto.VirgilCryptoException"></exception>
+        /// <example>
+        ///   <code>
+        ///     var crypto = new VirgilCrypto();
+        ///     var alice = crypto.GenerateKeys();
+        ///     var bob = crypto.GenerateKeys();
+        ///     var originalData = Encoding.UTF8.GetBytes("Hello Bob, How are you?");
+        ///     // The data to be signed with Alice's Private key and then encrypted for Bob.
+        ///     var detachedEncryptionResult = crypto.SignThenEncrypt(originalData, alice.PrivateKey, bob.PublicKey);
+        ///   </code>
+        /// </example>
+        public DetachedEncryptionResult SignThenEncryptDetached(byte[] data, IPrivateKey privateKey, params IPublicKey[] recipients)
+        {
+            try
+            {
+                using (VirgilSigner signer = new VirgilSigner(VirgilHash.Algorithm.SHA512))
+                using (VirgilCipher cipher = new VirgilCipher())
+                {
+                    byte[] signature = signer.Sign(data, VirgilCryptoExtentions.Get(privateKey).RawKey);
+
+                    VirgilCustomParams customData = cipher.CustomParams();
+                    customData.SetData(this.CustomParamKeySignature, signature);
+
+                    IPublicKey publicKey = this.ExtractPublicKey(privateKey);
+
+                    customData.SetData(this.CustomParamKeySignerId, VirgilCryptoExtentions.Get(publicKey).Id);
+
+                    foreach (IPublicKey recipientPublicKey in recipients)
+                    {
+                        cipher.AddKeyRecipient(VirgilCryptoExtentions.Get(recipientPublicKey).Id,
+                            VirgilCryptoExtentions.Get(recipientPublicKey).RawKey);
+                    }
+                   
+                    return new DetachedEncryptionResult()
+                    {
+                        Value = cipher.Encrypt(data, false),
+                        Meta = cipher.GetContentInfo()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new VirgilCryptoException(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Decrypts and verifies the specified data.
+        /// </summary>
+        /// <param name="cipherData">The cipher data.</param>
+        /// <param name="privateKey">The Private key to decrypt.</param>
+        /// <param name="publicKeys"> The list of trusted public keys for verification, 
+        /// which can contain signer's public key.</param>
+        /// <returns>The decrypted and verified data</returns>
+        /// <exception cref="VirgilCryptoException"></exception>
+        /// <example>
+        ///     <code>
+        ///         var crypto = new VirgilCrypto();
+        ///         var decryptedData = crypto.DecryptThenVerifyDetached(cipherData, meta, bob.PrivateKey, alice.PublicKey);
+        ///     </code>
+        /// </example>
+        /// <remarks>How to get cipherData as well as Alice's and Bob's key pairs
+        /// <see cref="SignThenEncrypt(byte[], IPrivateKey, IPublicKey[])"/>.</remarks>
+        public byte[] DecryptThenVerifyDetached(byte[] cipherData, byte[] metaData, IPrivateKey privateKey, params IPublicKey[] publicKeys)
+        {
+            try
+            {
+                using (VirgilSigner signer = new VirgilSigner(VirgilHash.Algorithm.SHA512))
+                using (VirgilCipher cipher = new VirgilCipher())
+                {
+                    cipher.SetContentInfo(metaData);
+                    if (!cipher.KeyRecipientExists(VirgilCryptoExtentions.Get(privateKey).Id))
+                    {
+                        throw new VirgilCryptoException("The data has not been encrypted for this recipient.");
+                    }
+                    return DecryptThenVerify(cipherData, privateKey, publicKeys, signer, cipher);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new VirgilCryptoException(ex.Message);
+            }
+        }
+
+        private byte[] DecryptThenVerify(byte[] cipherData, IPrivateKey privateKey, IPublicKey[] publicKeys, VirgilSigner signer, VirgilCipher cipher)
+        {
+            byte[] decryptedData =
+                cipher.DecryptWithKey(cipherData, VirgilCryptoExtentions.Get(privateKey).Id,
+                VirgilCryptoExtentions.Get(privateKey).RawKey);
+            byte[] signature = cipher.CustomParams().GetData(this.CustomParamKeySignature);
+
+            IPublicKey signerPublicKey = (publicKeys.Length > 0) ? publicKeys[0] : null;
+            if (publicKeys.Length > 1)
+            {
+                byte[] signerId = cipher.CustomParams().GetData(this.CustomParamKeySignerId);
+                signerPublicKey = FindPublicKeyBySignerId(publicKeys, signerId);
+            }
+
+            bool isValid = signer.Verify(decryptedData, signature, VirgilCryptoExtentions.Get(signerPublicKey).RawKey);
+            if (!isValid)
+                throw new VirgilCryptoException("Signature is not valid.");
+
+            return decryptedData;
+        }
+
+        /// <summary>
         /// Decrypts and verifies the specified data.
         /// </summary>
         /// <param name="cipherData">The cipher data.</param>
@@ -646,23 +758,7 @@ namespace Virgil.Crypto
                 using (VirgilSigner signer = new VirgilSigner(VirgilHash.Algorithm.SHA512))
                 using (VirgilCipher cipher = new VirgilCipher())
                 {
-                    byte[] decryptedData =
-                        cipher.DecryptWithKey(cipherData, VirgilCryptoExtentions.Get(privateKey).Id,
-                        VirgilCryptoExtentions.Get(privateKey).RawKey);
-                    byte[] signature = cipher.CustomParams().GetData(this.CustomParamKeySignature);
-
-                    IPublicKey signerPublicKey = (publicKeys.Length > 0) ? publicKeys[0] : null;
-                    if (publicKeys.Length > 1)
-                    {
-                        byte[] signerId = cipher.CustomParams().GetData(this.CustomParamKeySignerId);
-                        signerPublicKey = FindPublicKeyBySignerId(publicKeys, signerId);
-                    }
-
-                    bool isValid = signer.Verify(decryptedData, signature, VirgilCryptoExtentions.Get(signerPublicKey).RawKey);
-                    if (!isValid)
-                        throw new VirgilCryptoException("Signature is not valid.");
-
-                    return decryptedData;
+                    return DecryptThenVerify(cipherData, privateKey, publicKeys, signer, cipher);
                 }
             }
             catch (Exception ex)
@@ -809,6 +905,7 @@ namespace Virgil.Crypto
 
         private IPublicKey FindPublicKeyBySignerId(IPublicKey[] publicKeys, byte[] signerId)
         {
+
             foreach (IPublicKey publicKey in publicKeys)
             {
                 if (ByteSequencesEqual(VirgilCryptoExtentions.Get(publicKey).Id, signerId))
@@ -816,7 +913,7 @@ namespace Virgil.Crypto
                     return publicKey;
                 }
             }
-            return null;
+            throw new VirgilCryptoException("Signer isn't in the list of trusted public keys.");
         }
 
         private bool ByteSequencesEqual(byte[] sequence1, byte[] sequence2)
